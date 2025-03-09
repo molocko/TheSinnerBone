@@ -1,0 +1,11 @@
+name: TheSinnerBone
+version: 1.1
+main: io.BM.Main
+description: Функционал Грешной Души
+author: BM
+website: t.me/yahochudoshirak
+api-version: '1.20'
+
+commands:
+  tsb:
+    description: none

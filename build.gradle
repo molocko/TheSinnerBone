@@ -1,0 +1,45 @@
+plugins {
+    id 'java'
+    //id 'com.github.johnrengelman.shadow' version '7.1.2'
+}
+//shadowJar {
+//    relocate 'org.json', 'io.bm.shaded.org.json'
+//}
+group = 'io.bm'
+version = '1.1'
+
+apply plugin: 'java'
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+
+repositories {
+    maven {
+        name = 'spigot-repo'
+        url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
+    }
+
+
+    maven {
+        name = 'sonatype'
+        url = 'https://oss.sonatype.org/content/groups/public/'
+    }
+    //mavenLocal() // This is needed for CraftBukkit and Spigot.
+}
+
+
+// ...
+
+
+dependencies {
+    //implementation 'org.json:json:20200518'
+    compileOnly 'org.spigotmc:spigot-api:1.20.1-R0.1-SNAPSHOT'
+}
+
+
+java {
+    toolchain.languageVersion.set(JavaLanguageVersion.of(17))
+}
+
+
